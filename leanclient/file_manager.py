@@ -1,3 +1,5 @@
+# Mar 26, 2025 Aidan Christensen  _wait_for_diagnostics will no longer end early if the file is done processing
+
 import logging
 import threading
 import time
@@ -922,20 +924,17 @@ class LSPFileManager(BaseLeanLSPClient):
                     path = path_by_uri[uri]
                     state = self.opened_files[path]
 
-                    if state.is_ready(current_time):
-                        state.complete = True
-                        completed_uris.add(uri)
-                    else:
-                        inactivity = current_time - state.last_activity
-                        max_inactivity = max(max_inactivity, inactivity)
-                        any_rpc_pending = (
-                            any_rpc_pending or not futures_by_uri[uri].done()
-                        )
+                    # if state.is_ready(current_time):
+                    #     state.complete = True
+                    #     completed_uris.add(uri)
+                    # else:
+                    inactivity = current_time - state.last_activity
+                    max_inactivity = max(max_inactivity, inactivity)
+                    any_rpc_pending = (
+                        any_rpc_pending or not futures_by_uri[uri].done()
+                    )
 
                 pending_uris.difference_update(completed_uris)
-
-                if not pending_uris:
-                    return True
 
                 # Fail fast if the LSP process is dead
                 if self.process.poll() is not None:
@@ -967,8 +966,7 @@ class LSPFileManager(BaseLeanLSPClient):
                 # Wake up on notification or after 5ms, whichever comes first
                 self._close_condition.wait(timeout=0.005)
 
-        # Should not reach here, but return False as safety
-        return False
+        return True
 
     def _wait_for_line_range(
         self,
