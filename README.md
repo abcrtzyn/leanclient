@@ -8,14 +8,14 @@
   <a href="https://pypi.org/project/leanclient/">
     <img src="https://img.shields.io/pypi/v/leanclient.svg" alt="PyPI version" />
   </a>
-  <a href="https://github.com/oOo0oOo/leanclient/actions/workflows/ci.yaml">
-    <img src="https://img.shields.io/github/actions/workflow/status/oOo0oOo/leanclient/ci.yaml?branch=main" alt="CI status" />
+  <a href="https://github.com/abcrtzyn/leanclient/actions/workflows/ci.yaml">
+    <img src="https://img.shields.io/github/actions/workflow/status/abcrtzyn/leanclient/ci.yaml?branch=main" alt="CI status" />
   </a>
   <a href="">
-    <img src="https://img.shields.io/github/last-commit/oOo0oOo/leanclient" alt="last update" />
+    <img src="https://img.shields.io/github/last-commit/abcrtzyn/leanclient" alt="last update" />
   </a>
-  <a href="https://github.com/oOo0oOo/leanclient/blob/main/LICENSE">
-    <img src="https://img.shields.io/github/license/oOo0oOo/leanclient.svg" alt="license" />
+  <a href="https://github.com/abcrtzyn/leanclient/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/abcrtzyn/leanclient.svg" alt="license" />
   </a>
 </p>
 
@@ -35,7 +35,7 @@ Check out the [documentation](https://leanclient.readthedocs.io) for more inform
 
 The best way to get started is to check out this minimal example in Google Colab:
 
-[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/oOo0oOo/leanclient/blob/main/examples/getting_started_leanclient.ipynb)
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/abcrtzyn/leanclient/blob/main/examples/getting_started_leanclient.ipynb)
 
 Or try it locally:
 
